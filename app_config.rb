@@ -4,7 +4,11 @@ SiteUrl = "http://news.priime.com"
 SiteDescription = "Photography News"
 
 # Redis config
-RedisURL = "redis://127.0.0.1:6379"
+if ENV["REDISCLOUD_URL"]
+  RedisURL = ENV["REDISCLOUD_URL"]
+else
+  RedisURL = "redis://127.0.0.1:6379"
+end
 
 # Security
 PBKDF2Iterations = 1000 # Set this to 5000 to improve security. But it is slow.
