@@ -131,7 +131,7 @@ class HTMLGen
                 self.meta(:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => :viewport)+
                 self.link(:href => "/css/style.css?v=10", :rel => "stylesheet",
                           :type => "text/css")+
-                self.link(:href => "/favicon.ico", :rel => "shortcut icon")+
+                self.link(:href => "favicon.ico", :rel => "shortcut icon")+
                 self.script(:src => "/js/jquery.1.6.4.min.js"){}+
                 self.script(:src => "/js/app.js?v=10"){}
             }+
