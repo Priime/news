@@ -1,10 +1,10 @@
 # General
-SiteName = "Lamer News"
-SiteUrl = "http://lamernews.com"
-SiteDescription = "Programming News"
+SiteName = "Priime News"
+SiteUrl = "http://news.priime.com"
+SiteDescription = "Photography News"
 
 # Redis config
-RedisURL = "redis://127.0.0.1:10000"
+RedisURL = "redis://127.0.0.1:6379"
 
 # Security
 PBKDF2Iterations = 1000 # Set this to 5000 to improve security. But it is slow.
@@ -60,5 +60,5 @@ APIMaxNewsCount = 32
 
 # Email service. Set MailRelay to false to disable this functionality
 # (this will prevent users from recovery accounts if the password gets lost).
-MailRelay = "localhost"
-MailFrom = "noreply@example.com"
+MailRelay = false
+MailFrom = "hello@priime.com"

@@ -12,4 +12,11 @@ group :development, :test do
   gem 'rake'
   gem 'rspec'
   gem 'rack-test'
+  gem 'sinatra-reloader'
+  gem 'racksh'
+  gem 'thin'
+end
+
+group :production do
+  gem 'unicorn'
 end
