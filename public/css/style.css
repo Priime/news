@@ -1,7 +1,7 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-rendering: optimizeLegibility;
 }
 
@@ -14,6 +14,7 @@ h2 {
     margin-bottom:20px;
     font-size:22px;
     color:#333;
+    font-family: DINCondensed-Light, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 li {
@@ -37,6 +38,7 @@ header h1 {
 
 header h1 a {
     color:#333;
+    font-family: DINCondensed-Regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 header h1 small {

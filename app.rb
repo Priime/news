@@ -31,6 +31,7 @@ require 'hiredis'
 require 'redis'
 require_relative 'page'
 require 'sinatra'
+require 'sinatra/reloader'
 require 'json'
 require 'digest/sha1'
 require 'digest/md5'
@@ -93,7 +94,7 @@ get '/rss' do
                 "#{SiteUrl}"
             } + " " +
             H.description {
-                "Description pending"
+                "#{SiteDescription}"
             } + " " +
             news_list_to_rss(news)
         }
@@ -1037,7 +1038,7 @@ end
 def application_header
     navitems = [    ["top","/"],
                     ["latest","/latest/0"],
-                    ["random","/random"],                    
+                    ["random","/random"],
                     ["submit","/submit"]]
     navbar = H.nav {
         navitems.map{|ni|
@@ -1060,6 +1061,7 @@ def application_header
     menu_mobile = H.a(:href => "#", :id => "link-menu-mobile"){"<~>"}
     H.header {
         H.h1 {
+            H.img(:src => "/images/logo-16.png") + " " +
             H.a(:href => "/") {H.entities SiteName}
         }+navbar+" "+rnavbar+" "+menu_mobile
     }

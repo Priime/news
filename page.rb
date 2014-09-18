@@ -133,7 +133,8 @@ class HTMLGen
                           :type => "text/css")+
                 self.link(:href => "favicon.ico", :rel => "shortcut icon")+
                 self.script(:src => "/js/jquery.1.6.4.min.js"){}+
-                self.script(:src => "/js/app.js?v=10"){}
+                self.script(:src => "/js/app.js?v=10"){}+
+                self.link(:href => "/css/webfonts.css", :rel => "stylesheet", :type => "text/css")
             }+
             self.body {
                 self.div(:class => "container") {
