@@ -38,8 +38,8 @@ KeyboardNavigation = 1
 
 # User
 DeletedUser = {"username" => "deleted_user", "email" => "", "id" => -1}
-UserCreationDelay = 3600*24
-PasswordResetDelay = 3600*24
+UserCreationDelay = 900
+PasswordResetDelay = 900
 UsernameRegexp = /^[a-zA-Z][a-zA-Z0-9_\-]+$/
 
 # News and ranking
