@@ -1676,7 +1676,7 @@ def news_to_html(news)
         }+" "+
         H.address {
             if domain
-                "at "+H.entities(domain)
+                " ("+H.entities(domain)+")"
             else "" end +
             if ($user and $user['id'].to_i == news['user_id'].to_i and
                 news['ctime'].to_i > (Time.now.to_i - NewsEditTime))
@@ -1685,17 +1685,13 @@ def news_to_html(news)
                 }
             else "" end
         }+
-        H.a(:href => "#down", :class =>  downclass) {
-            "&#9660;"
-        }+
         H.p {
-            H.span(:class => :upvotes) { news["up"] } + " up and " +
-            H.span(:class => :downvotes) { news["down"] } + " down, posted by " +            
+            H.span(:class => :upvotes) { news["up"] } + " up by " +
             H.username {
                 H.a(:href=>"/user/"+URI.encode(news["username"])) {
                     H.entities news["username"]
                 }
-            }+" "+str_elapsed(news["ctime"].to_i)+" "+
+            }+" "+str_elapsed(news["ctime"].to_i)+" | "+
             H.a(:href => "/news/#{news["id"]}") {
                 comments_number = news["comments"].to_i
                 if comments_number != 0

@@ -1,8 +1,16 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
 
 body {
-    font-family: Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-rendering: optimizeLegibility;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #828282;
+  text-rendering: optimizeLegibility;
+}
+.container {
+  max-width: 1024px;
+  min-width: 320px;
+  width: 85%;
+  margin: 0 auto;
 }
 
 a {
@@ -14,7 +22,6 @@ h2 {
     margin-bottom:20px;
     font-size:22px;
     color:#333;
-    font-family: DINCondensed-Light, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 li {
@@ -44,6 +51,7 @@ header h1 {
 header h1 a {
     color:#333;
     font-family: DINCondensed-Regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
 }
 
 header h1 small {
@@ -71,6 +79,9 @@ footer {
 nav {
     margin-bottom:15px;
     display: inline;
+    margin-left: 15px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10pt;
 }
 
 nav a {
@@ -83,7 +94,7 @@ nav a {
     top: 25px;
     right: 15px;
     font-weight:bold;
-    font-size:14px;
+    font-size:9pt;
 }
 
 #account a {
@@ -116,10 +127,6 @@ article {
     border: 1px solid transparent;
 }
 
-article.active {
-    border: 1px dashed #000;
-}
-
 article h2 {
     display: inline;
     font-size:20px;
@@ -128,15 +135,12 @@ article h2 {
 article address {
     display: inline;
     color: #999;
-    font-size:14px;
+    font-size:13px;
 }
 
 article h2 a {
     color: black;
-}
-
-article h2 a:visited {
-    color: #999999;
+    font-size: 16px;
 }
 
 article .uparrow, article .downarrow {
@@ -153,9 +157,10 @@ article .downarrow {
 }
 
 article p {
-    font-size:14px;
+    font-size:13px;
     color:#999;
     margin-left:20px;
+    margin-top: 5px;
 }
 
 article p a {
