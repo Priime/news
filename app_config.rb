@@ -56,8 +56,9 @@ SavedNewsPerPage = 10
 TopNewsAgeLimit = 3600*24*30
 
 # Footer links
-FooterTwitterLink = false
+FooterTwitterLink = "http://twitter.com/priimephoto"
 FooterGoogleGroupLink = false
+FooterBlogLink = "http://blog.priime.com"
 
 # API
 APIMaxNewsCount = 32

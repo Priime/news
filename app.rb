@@ -1061,7 +1061,7 @@ def application_header
     menu_mobile = H.a(:href => "#", :id => "link-menu-mobile"){"<~>"}
     H.header {
         H.h1 {
-            H.img(:src => "/images/logo-16.png") + " " +
+            H.img(:src => "/images/logo-24.png", :id => "logo") + " " +
             H.a(:href => "/") {H.entities SiteName}
         }+navbar+" "+rnavbar+" "+menu_mobile
     }
@@ -1110,6 +1110,8 @@ def application_footer
     end
     H.footer {
         links = [
+            ["app", "http://priime.com"],
+            ["blog", FooterBlogLink],
             ["rss", "/rss"],
             ["twitter", FooterTwitterLink],
             ["google group", FooterGoogleGroupLink]
