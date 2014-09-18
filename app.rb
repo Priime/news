@@ -1060,8 +1060,7 @@ def application_header
     menu_mobile = H.a(:href => "#", :id => "link-menu-mobile"){"<~>"}
     H.header {
         H.h1 {
-            H.a(:href => "/") {H.entities SiteName}+" "+
-            H.small {Version}
+            H.a(:href => "/") {H.entities SiteName}
         }+navbar+" "+rnavbar+" "+menu_mobile
     }
 end
