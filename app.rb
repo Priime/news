@@ -1278,7 +1278,7 @@ end
 
 # Indicates when the user is allowed to submit another story after the last.
 def allowed_to_post_in_seconds
-    return 0 if user_is_admin?($user)
+    return 0 if user_is_admin?($user) || user_is_superuser?($user)
     $r.ttl("user:#{$user['id']}:submitted_recently")
 end
 
@@ -1289,6 +1289,7 @@ end
 # 'a'   Administrator.
 # 'k'   Karma source, can transfer more karma than owned.
 # 'n'   Open links to new windows.
+# 's'   Superuser. No rate limits.
 #
 def user_add_flags(user_id,flags)
     user = get_user_by_id(user_id)
@@ -1313,20 +1314,24 @@ def user_has_flags?(user,flags)
 end
 
 def user_is_admin?(user)
-    user_has_flags?(user,"a")
+  user_has_flags?(user,"a")
+end
+
+def user_is_superuser?(user)
+  user_has_flags?(user, "s")
 end
 
 def send_reset_password_email(user)
-    return false if !MailRelay || !MailFrom
-    aux = request.url.split("/")
-    return false if aux.length < 3
-    current_domain = aux[0]+"//"+aux[2]
+  return false if !MailRelay || !MailFrom
+  aux = request.url.split("/")
+  return false if aux.length < 3
+  current_domain = aux[0]+"//"+aux[2]
 
-    reset_link = "#{current_domain}/set-new-password?user=#{URI.encode(user['username'])}&auth=#{URI.encode(user['auth'])}"
+  reset_link = "#{current_domain}/set-new-password?user=#{URI.encode(user['username'])}&auth=#{URI.encode(user['auth'])}"
 
-    subject = "#{aux[2]} password reset"
-    message = "You can reset your password here: #{reset_link}"
-    return mail(MailRelay,MailFrom,user['email'],subject,message)
+  subject = "#{aux[2]} password reset"
+  message = "You can reset your password here: #{reset_link}"
+  return mail(MailRelay,MailFrom,user['email'],subject,message)
 end
 
 ################################################################################
